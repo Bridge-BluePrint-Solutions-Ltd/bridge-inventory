@@ -47,17 +47,24 @@ browser → :8000 → app (snipe/snipe-it:v8.7.2)
 - [x] Pin `APP_VERSION=v8.7.2`
 - [x] Add Mailpit service; wire `MAIL_HOST=mailpit`
 - [x] Create `.env` from `.env.docker` with strong DB passwords, Africa/Accra, APP_URL
+- [x] Generate fresh `APP_KEY` via artisan and recreate app container
 - [x] Document Mode B local image build path in compose + docs
-- [x] `docker compose up -d` and verify HTTP on :8000
+- [x] `docker compose up -d` — verified `curl` → **302** `Location: /setup`; Mailpit UI **200**
 - [x] Living plan in repo + `/Users/padmore/Documents/Bridge-Inventory-Plan.md`
-- [x] `docs/LOCAL-SETUP.md`, README Bridge note, commit (push if auth allows)
+- [x] `docs/LOCAL-SETUP.md`, README Bridge note, local git commit `d89c8e093a`
+
 
 ## Remaining checklist
 
-- [ ] Complete web setup wizard (admin account) at http://localhost:8000 — **Padmore / human**
-- [ ] Regenerate `APP_KEY` via `docker compose run --rm app php artisan key:generate --show` and paste into `.env` if still using sample key; restart app
-- [ ] Push to GitHub origin if not already done (`git push -u origin master`)
-- [ ] Test outbound mail via Mailpit UI (create user / password reset in app)
+- [ ] **Push to GitHub** — blocked: `GeorgePadmore` is org *member* but repo perms are pull-only (`push: false`). Grant write (or admin) on `Bridge-BluePrint-Solutions-Ltd/bridge-inventory`, then run:
+  ```bash
+  cd /Users/padmore/Documents/Projects/Bridge-BluePrint/bridge-inventory
+  # Empty remote default branch is currently "main"; push master as main OR push master and set default:
+  git push -u origin master:main
+  # or: git push -u origin master
+  ```
+- [ ] Complete web setup wizard (admin account) at http://localhost:8000/setup — **Padmore / human**
+- [ ] Test outbound mail via Mailpit UI (create user / password reset in app) → http://localhost:8025
 - [ ] Optional: switch `MAIL_MAILER=log` and confirm log driver
 - [ ] Plan Resend SMTP for production (smtp.resend.com:587, API key in secrets)
 - [ ] Cloudflare DNS for inventory hostname
@@ -67,6 +74,20 @@ browser → :8000 → app (snipe/snipe-it:v8.7.2)
 - [ ] AGPL-3.0 compliance: if code is modified and distributed/SaaS-offered, publish source / offer
 - [ ] SSO / SAML / LDAP if Bridge needs it later
 - [ ] Branding (logo, APP name) when customizing
+
+
+
+## Status snapshot (2026-09-28 ~18:03 Africa/Accra)
+
+| Item | Value |
+|------|--------|
+| Project path | `/Users/padmore/Documents/Projects/Bridge-BluePrint/bridge-inventory` |
+| Commit (local) | `d89c8e093a` on `master` (1 commit ahead of upstream; **not** on GitHub yet) |
+| origin push | **403** — need write access for GeorgePadmore on Bridge repo |
+| Docker | `app` (v8.7.2), `db` (healthy), `mailpit` (healthy) |
+| App | http://localhost:8000 → redirects to `/setup` |
+| Mailpit | http://localhost:8025 |
+| Secrets | in local `.env` only (gitignored) |
 
 ## Commands cheat sheet
 
