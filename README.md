@@ -1,3 +1,14 @@
+# Bridge Inventory
+
+**Bridge BluePrint Solutions Ltd** fork/deployment of [Snipe-IT](https://github.com/grokability/snipe-it) (AGPL-3.0) for internal asset inventory.
+
+- Living plan: [docs/BRIDGE-INVENTORY-PLAN.md](docs/BRIDGE-INVENTORY-PLAN.md) · [PLAN.md](PLAN.md)
+- Local Docker: [docs/LOCAL-SETUP.md](docs/LOCAL-SETUP.md)
+- Deploy notes: [DEPLOYMENT.md](DEPLOYMENT.md)
+- Upstream project remains Snipe-IT by Grokability; retain license and attribution.
+
+---
+
 ![snipe-it-by-grok](https://github.com/grokability/snipe-it/assets/197404/b515673b-c7c8-4d9a-80f5-9fa58829a602)
 
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/snipe-it/localized.svg)](https://crowdin.com/project/snipe-it) [![Docker Pulls](https://img.shields.io/docker/pulls/snipe/snipe-it.svg)](https://hub.docker.com/r/snipe/snipe-it/)  [![Tests in MySQL](https://github.com/grokability/snipe-it/actions/workflows/tests-mysql.yml/badge.svg)](https://github.com/grokability/snipe-it/actions/workflows/tests-mysql.yml)

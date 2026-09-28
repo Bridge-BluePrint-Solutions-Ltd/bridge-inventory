@@ -1,4 +1,11 @@
-# Compose file for production.
+# Bridge Inventory — Docker Compose (Snipe-IT fork)
+# Services: app (snipe/snipe-it), db (mariadb), mailpit (local SMTP + UI)
+#
+# Default: official image pinned via APP_VERSION in .env
+# Mode B local customize:
+#   1. docker build -t bridge-inventory:local .
+#   2. Change app.image below to bridge-inventory:local (or uncomment build:)
+#   3. docker compose up -d
 
 volumes:
   db_data:
@@ -6,7 +13,10 @@ volumes:
 
 services:
   app:
-    image: snipe/snipe-it:${APP_VERSION:-latest}
+    image: snipe/snipe-it:${APP_VERSION:-v8.7.2}
+    # Mode B — build from local Dockerfile instead of Hub image:
+    # build: .
+    # image: bridge-inventory:local
     restart: unless-stopped
     volumes:
       - storage:/var/lib/snipeit
@@ -16,8 +26,12 @@ services:
       db:
         condition: service_healthy
         restart: true
+      mailpit:
+        condition: service_started
     env_file:
       - .env
+    networks:
+      - bridge-inventory
 
   db:
     image: mariadb:11.4.7
@@ -35,3 +49,18 @@ services:
       interval: 5s
       timeout: 1s
       retries: 5
+    networks:
+      - bridge-inventory
+
+  mailpit:
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    ports:
+      - "8025:8025"   # Web UI
+      - "1025:1025"   # SMTP
+    networks:
+      - bridge-inventory
+
+networks:
+  bridge-inventory:
+    driver: bridge
