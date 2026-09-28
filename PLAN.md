@@ -1,7 +1,7 @@
 # Bridge Inventory — Living Plan
 
 > Living document for humans and AIs. Update checklists as work completes.
-> Last updated: 2026-09-28 ~18:20 (Africa/Accra / UTC+0)
+> Last updated: 2026-09-28 ~18:25 (Africa/Accra / UTC+0)
 
 ## Goal
 
@@ -58,13 +58,7 @@ browser → :8000 → app (snipe/snipe-it:v8.7.2)
 ## Remaining checklist
 
 - [ ] **Read & follow** [docs/USER-GUIDE-BRIDGE-INVENTORY.md](USER-GUIDE-BRIDGE-INVENTORY.md) after the setup wizard — configure categories/models/statuses/locations, then seed office inventory
-- [ ] **Push to GitHub** — blocked: `GeorgePadmore` is org *member* but repo perms are pull-only (`push: false`). Grant write (or admin) on `Bridge-BluePrint-Solutions-Ltd/bridge-inventory`, then run:
-  ```bash
-  cd /Users/padmore/Documents/Projects/Bridge-BluePrint/bridge-inventory
-  # Empty remote default branch is currently "main"; push master as main OR push master and set default:
-  git push -u origin master:main
-  # or: git push -u origin master
-  ```
+- [x] **Push to GitHub** — `origin/main` updated (`git push -u origin master:main`); GeorgePadmore has write
 - [ ] Complete web setup wizard (admin account) at http://localhost:8000/setup — **Padmore / human**
 - [ ] Test outbound mail via Mailpit UI (create user / password reset in app) → http://localhost:8025
 - [ ] Optional: switch `MAIL_MAILER=log` and confirm log driver
@@ -79,13 +73,13 @@ browser → :8000 → app (snipe/snipe-it:v8.7.2)
 
 
 
-## Status snapshot (2026-09-28 ~18:20 Africa/Accra)
+## Status snapshot (2026-09-28 ~18:25 Africa/Accra)
 
 | Item | Value |
 |------|--------|
 | Project path | `/Users/padmore/Documents/Projects/Bridge-BluePrint/bridge-inventory` |
-| Commit (local) | `d89c8e093a` on `master` (1 commit ahead of upstream; **not** on GitHub yet) |
-| origin push | **403** — need write access for GeorgePadmore on Bridge repo |
+| Commit (local) | `2449ca068f` on `master` (tracks `origin/main`) |
+| origin push | **OK** — docs commit pushed to `origin/main` |
 | Docker | `app` (v8.7.2), `db` (healthy), `mailpit` (healthy) |
 | App | http://localhost:8000 → redirects to `/setup` |
 | Mailpit | http://localhost:8025 |
