@@ -8,6 +8,32 @@
 - Deploy notes: [DEPLOYMENT.md](DEPLOYMENT.md)
 - Upstream project remains Snipe-IT by Grokability; retain license and attribution.
 
+
+## Local development (Docker)
+
+Bridge Inventory runs locally with Docker Desktop. Prerequisites: **Docker Desktop running**.
+
+```bash
+cd /Users/padmore/Documents/Projects/Bridge-BluePrint/bridge-inventory
+docker compose up -d
+```
+
+Open the app at [http://localhost:8000](http://localhost:8000). The local Mailpit inbox is at [http://localhost:8025](http://localhost:8025).
+
+To stop the stack while keeping database and application data, run:
+
+```bash
+docker compose down
+```
+
+Do **not** use `docker compose down -v` unless you intend to delete the Docker volumes and reset local data. Follow logs with:
+
+```bash
+docker compose logs -f app
+```
+
+For the complete setup and usage instructions, see [docs/LOCAL-SETUP.md](docs/LOCAL-SETUP.md) and [docs/USER-GUIDE-BRIDGE-INVENTORY.md](docs/USER-GUIDE-BRIDGE-INVENTORY.md).
+
 ---
 
 ![snipe-it-by-grok](https://github.com/grokability/snipe-it/assets/197404/b515673b-c7c8-4d9a-80f5-9fa58829a602)

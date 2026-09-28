@@ -41,10 +41,10 @@ docker compose up -d --force-recreate app
 | Status | `docker compose ps` |
 | App logs | `docker compose logs -f app` |
 | Mailpit logs | `docker compose logs -f mailpit` |
-| Stop | `docker compose stop` |
+| Stop (keep data) | `docker compose down` |
 | Recreate app | `docker compose up -d --force-recreate app` |
 
-**Do not** run `docker compose down -v` unless you intend to wipe the database volume.
+**Do not** run `docker compose down -v` unless you intend to delete the database and application volumes and reset local data.
 
 ## Mail
 
