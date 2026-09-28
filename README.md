@@ -3,6 +3,7 @@
 **Bridge BluePrint Solutions Ltd** fork/deployment of [Snipe-IT](https://github.com/grokability/snipe-it) (AGPL-3.0) for internal asset inventory.
 
 - Living plan: [docs/BRIDGE-INVENTORY-PLAN.md](docs/BRIDGE-INVENTORY-PLAN.md) · [PLAN.md](PLAN.md)
+- User guide (office inventory how-to): [docs/USER-GUIDE-BRIDGE-INVENTORY.md](docs/USER-GUIDE-BRIDGE-INVENTORY.md)
 - Local Docker: [docs/LOCAL-SETUP.md](docs/LOCAL-SETUP.md)
 - Deploy notes: [DEPLOYMENT.md](DEPLOYMENT.md)
 - Upstream project remains Snipe-IT by Grokability; retain license and attribution.

@@ -1,7 +1,7 @@
 # Bridge Inventory — Living Plan
 
 > Living document for humans and AIs. Update checklists as work completes.
-> Last updated: 2026-09-28 (Africa/Accra / UTC+0)
+> Last updated: 2026-09-28 ~18:20 (Africa/Accra / UTC+0)
 
 ## Goal
 
@@ -52,10 +52,12 @@ browser → :8000 → app (snipe/snipe-it:v8.7.2)
 - [x] `docker compose up -d` — verified `curl` → **302** `Location: /setup`; Mailpit UI **200**
 - [x] Living plan in repo + `/Users/padmore/Documents/Bridge-Inventory-Plan.md`
 - [x] `docs/LOCAL-SETUP.md`, README Bridge note, local git commit `d89c8e093a`
+- [x] `docs/USER-GUIDE-BRIDGE-INVENTORY.md` — practical Snipe-IT how-to for Bridge office inventory (assets/accessories/consumables/components/licenses, setup order, taxonomy, day-1 checklist)
 
 
 ## Remaining checklist
 
+- [ ] **Read & follow** [docs/USER-GUIDE-BRIDGE-INVENTORY.md](USER-GUIDE-BRIDGE-INVENTORY.md) after the setup wizard — configure categories/models/statuses/locations, then seed office inventory
 - [ ] **Push to GitHub** — blocked: `GeorgePadmore` is org *member* but repo perms are pull-only (`push: false`). Grant write (or admin) on `Bridge-BluePrint-Solutions-Ltd/bridge-inventory`, then run:
   ```bash
   cd /Users/padmore/Documents/Projects/Bridge-BluePrint/bridge-inventory
@@ -77,7 +79,7 @@ browser → :8000 → app (snipe/snipe-it:v8.7.2)
 
 
 
-## Status snapshot (2026-09-28 ~18:03 Africa/Accra)
+## Status snapshot (2026-09-28 ~18:20 Africa/Accra)
 
 | Item | Value |
 |------|--------|
@@ -125,7 +127,7 @@ docker compose up -d --force-recreate app
 
 ## How another AI should resume
 
-1. Read this file and `docs/LOCAL-SETUP.md`.
+1. Read this file, `docs/LOCAL-SETUP.md`, and `docs/USER-GUIDE-BRIDGE-INVENTORY.md` (ops how-to).
 2. Confirm machine: Padmore MacBook `a2ba6e84-6e49-4d59-8b17-214b412b52e7`; project path above.
 3. Check `docker compose ps` and `git remote -v` / `git status`.
 4. Do **not** commit `.env` or run `down -v` without explicit human approval.
